@@ -59,8 +59,6 @@
 
         random.choice, random.sample
 
-## Startcamp Day2
-
 ### API, 크롤링
 
 1.  API
@@ -124,7 +122,6 @@
 
 - 편하게 쓰려고 사용
 - 함수안에서 발생한 값이 필요한 경우 return으로 반환
-- 시험때 조심! 반환(return)인지 출력(print)인지
 
 ### 서버 Server
 
