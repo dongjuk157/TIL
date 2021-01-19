@@ -14,34 +14,24 @@
 ### 파이썬 
 
 1. 변수(숫자, 문자, Boolean): 
+   - `num=1`, `st='string'`, `b=True`
+   - `type()`: 자료형 확인
 
-​	ex) num=1, st='string', b=True
+2. List
+   - `lst=[1,2,'st']`,  `lst[2]='st'`
 
-​	type()으로 자료형을 확인할수 있음.
-
-​	실습: 변수활용
-
-2. 리스트: 대괄호로 사용. 
-
-​	ex) lst=[1,2,'st'],  lst[2]='st'
-
-​	실습: 점심메뉴 추천
-
-3. 딕셔너리: 중괄호로 사용. key, value 필요
-
-​	ex) dic={'key1':'value1','key2':'value2','key3':'value3',}  dic['key2']='value2'
-
-​	실습: 메뉴(식당)와 전화번호 알려주기
+3. 딕셔너리: 
+   - 중괄호로 사용. key, value 필요
+   - `dic={'key1':'value1','key2':'value2','key3':'value3',}`  
+   - `dic['key2']='value2'`
 
 4. 조건문: if, elif, else
-
 5. 반복문: while, for
-
-​	for _ in range(5): pass  => 변수는 안쓰는 경우 underbar 사용.
+   -  `for _ in range(5): pass`  => 변수 안쓰는 경우 underbar 사용.
 
 6. Operator: 사칙연산 비교 등 있음
 
-7. Condition: True/ False를 반환하는 식
+7. Condition: `True`/ `False`를 반환하는 식
 
 8. 함수
 
@@ -67,35 +57,6 @@
     - JSON: 딕셔너리 같은 형식으로 반환.
 2.  크롤링
     - 실습: requests, beautifulSoup 사용
-
-### Git
-
-버전 관리를 위한 툴
-
-- 버전 관리를 위해 대상이 되는 폴더가 필요함.
-- 협업가능
-- github, gitlab 등과 연동
-
-명령어
-
-- git init
-  - 대상이 되는 폴더를 설정
-  - 폴더당 한번만 실행. 하고 나면 (master)가 붙음
-- git status
-  - 현재 상태 확인
-- git add [file_name] 
-  - stage에 올림.  commit을 하려면 우선 수행해야 됨.
-  - stage: 변경사항이 관리되는 단계
-  - Untracked files - 관리 되지 않는 파일
-- git commit
-  - 버전을 업데이트 할수 있음
-  - 제일 처음 수행하면 다음을 등록하라고 나옴
-    - git config --global user.name 'your name'
-    - git config --global user.email 'email'
-  - git commit -m 'message'
-    - commit할때마다 해당 버전의 수정사항이 무엇인지 간략하게 적어서 올림
-- git log
-  - 기록확인
 
 ### 챗봇 
 
