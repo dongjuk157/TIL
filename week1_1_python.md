@@ -349,22 +349,29 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
   - 해결방법: 새로 선언해서 해결. `b=list(a)`,`b=a[:]`
 
-## 제어문
+## 제어문(Control Flow)
 
 Flow Chart 중요
 
 ### 1. 조건문(If Statement)
 
-python에서는 들여쓰기(tab, 4spaces)을 해야됨
+python에서는 들여쓰기(tab, 4spaces)를 맞춰줘야 함.
+
+그렇지 않으면 `IndentationError`가 뜸
 
 ``` python
 if <조건식>:
-    <code1> #4 space
+    <code1> #4 space or tab
 elif <조건식>:
     <code2>
 else:
     <code3>
 ```
+
+- 조건표현식(삼항연산자)
+  - `true_value if <조건식> else false_value`
+  - 표현식이므로 하나의 값임.
+  - 조건문을 사용하지 못하는 경우나 간결한 코드를 위해 사용
 
 ### 2. 반복문(Loop Statement)
 
@@ -377,7 +384,7 @@ else:
        <code>
    ```
 
-   - 코드 내 종료 조건 필요
+   - 코드 내 종료 조건 필요. 무한 루프 가능성
 
 2. for
 
@@ -394,25 +401,93 @@ else:
    ```
 
    - 다른 언어에서는 인덱스로 접근
-   - enumerate: 인덱스(index)와 값(value)을 함께 활용 가능
+   - enumerate
+     - 인덱스(index)와 값(value)을 함께 활용 가능
+     - 튜플로 반환 (index1,value1)
+     - start 숫자 지정가능
 
    ``` python
-   for i, num in enumerate(nums): 	# nums = [10,20,30,40,50]
+   for i, num in enumerate(nums,start=1): 	# nums = [10,20,30,40,50]
        print(i,num)  	
-       # 1 10
-       # 2 20
-       # 3 30
-       # 4 40
-       # 5 50
+       # 0 10
+       # 1 20
+       # 2 30
+       # 3 40
+       # 4 50
+   ```
+
+   ``` python
+   print(enumerate(nums))
+   #<enumerate object at (memory address)>
+   print(list(enumerate(nums)))
+   #[(0,10),(1,20),(2,30),(3,40),(4,50)]
    ```
 
 3. 반복제어
-   - break: 반복문을 종료
-   - continue: continue 이후의 코드를 수행하지 않고 다음 요소부터 다시 반복 진행
-   - for-else
+   - break: 반복문 종료
+
+     ``` python
+     for num in range(5):
+     	if num == 2:
+             break
+         print(i)
+         # 0
+         # 1
+         # break. 반복문 종료
+     ```
+
+   - continue: continue 이후의 코드를 수행하지 않고, 다음 요소부터 다시 반복 진행
+
+     ``` python
+     for num in range(5):
+     	if num == 2:
+             continue
+         print(i)
+         # 0
+         # 1
+         # continue. 이후 코드는 무시하고 다음 요소 진행
+         # 3
+         # 4
+     ```
+
+   - for-else, while- else
      - 끝까지 반복문을 실행한 이후에 실행
-     - 반복에서 리스트의 소진이나 (`for` 의 경우) 조건이 거짓이 돼서 (`while` 의 경우) 종료할 때 실행
-     - 하지만 반복문이 `break` 문으로 종료될 때는 실행되지 않음
+       - `for`문에서 리스트가 소진 되었을 경우
+       - `while`문에서 조건이 거짓이 돼서  종료된 경우
+     - 반복문이 `break` 문으로 종료될 때는 실행되지 않음
+
+     ```python
+     # 리스트 안에 값이 있는지 찾는 코드
+     menu = ['칼국수','돌솥비빔밥','주꾸미볶음']
+     for mn in menu:
+         if mn =='치킨':
+             print('치킨 좋네')
+             break
+     else:
+         print("치킨 먹자")
+     #menu에 '치킨'이 없으므로 '치킨먹자' 출력
+     ```
+
+     - for-else를 사용하지 않고도 같은 코드를 만들수있음. (다른 언어에서 사용)
+
+     ``` python
+     menu = ['칼국수','돌솥비빔밥','주꾸미볶음']
+     cnt=True
+     for mn in menu:
+         if mn =='치킨':
+             print('치킨 좋네')
+             cnt=False #break이 되었는지 확인
+             break
+     if cnt:
+         print("치킨 먹자")
+     #menu에 '치킨'이 없으므로 '치킨먹자' 출력
+     ```
+
+     
+
    - pass: 아무것도 하지 않음
+     
      - 문법적으로 문장이 필요하지만, 프로그램이 특별히 할 일이 없을 때 자리를 채우는 용도
+     - 코드를 만들지 않았는데 이전까지 문제없는지 확인하고 싶은 경우에 사용했음.
+
 
