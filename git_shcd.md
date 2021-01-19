@@ -32,8 +32,47 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 ## 2. Git 2
 
-0. Git 설치 -> 0. git
 1. 버전 관리의 시작
+
+2. 버전의 생성
+
+   - Working Tree: 내가 일하는 공간
+   - Staging Area: 버전을 만들고 싶은 파일이 있는 공간
+   - Repository: 만들어진 버전
+
+   `$ git status` 
+
+   - Untracked files: 추적하지 않는다.
+
+   `$ git add <file name>`
+
+   - Staging에 올림
+   - 여러 파일을 설정할수 있음
+
+   ` $ git commit -m 'Message'`
+
+   - repo로 옮김
+
+   `$ git log`
+
+   - commit 내역을 볼수있다.
+
+   - `git log --stat`: 어떤 파일이 연결되었는지 확인가능
+   - `git log -p`:이전 버전과 비교 가능(추가된 내용,파일) 
+
+3. 버전간의 차이점 비교
+
+   - `git diff`
+
+4. checkout과 시간여행
+
+5. 보충수업
+
+6. 버전 삭제
+
+7. 버전 되돌리기
+
+   - `git reset --hard`:이전 버전으로 돌아갈수있음
 
 ---
 
