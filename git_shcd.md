@@ -1,8 +1,16 @@
 # Git 생활코딩
 
-## 0. Git
+## 0. Git 설치
 
-설치하고 git bash에 다음 명령어를 입력
+다음 주소에서 Git설치
+
+https://git-scm.com
+
+설치시 바꿀만한 것 없이 대부분 Next
+
+- 굳이 할필요는 없는거 같지만 check daily for git for windows updates 체크했음
+
+git bash에 다음 명령어를 입력
 
 ```shell
 $ git
@@ -16,7 +24,7 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
            [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
            <command> [<args>]
 
-## 1. Git 1
+## 1. Git
 
 ### Git의 목적
 
@@ -30,7 +38,7 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
    - Pull: Local <- Remote; 원격 저장소의 파일을 내 폴더에 가져온다.(동기화 시킨다.)
 3. 협업
 
-## 2. Git 2
+## 2. Git - 버전관리
 
 1. 버전 관리의 시작
 
@@ -66,13 +74,93 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 4. checkout과 시간여행
 
+   - `git checkout <commit_id>`
+
+     - 해당 시점의 파일을 확인함
+     - `git status`확인시 `HEAD detached at <commit_id>`
+
+   - `git log` 
+
+     ``` shell
+     commit <commit_id2> (HEAD)
+     Author: -
+     Date: Mon Jan 15 22:15:35 2018 +0900
+     
+         Message 1
+         
+     commit <commit_id1>
+     Author: -
+     Date: Mon Jan 15 22:14:16 2018 +0900
+     
+         Initial commit
+     
+     ```
+
+     - <commit_id1>, <commit_id2>로 이동할수있음
+
+   - `git checkout master`: master(최신상태)로 돌아감.
+
+     ``` shell
+     commit <commit_id3> (HEAD -> master, origin/master, origin/HEAD)
+     Author: -
+     Date:   Tue Jan 19 17:46:45 2021 +0900
+     
+         Message 2
+     
+     commit <commit_id2>
+     Author: -
+     Date:   Mon Jan 15 22:15:35 2018 +0900
+     
+         Message 1
+     
+     commit <commit_id1>
+     Author: -
+     Date: Mon Jan 15 22:14:16 2018 +0900
+     
+         Initial commit
+     
+     ```
+
 5. 보충수업
+
+   - `git add .`: 모든 파일 add
+
+   - `git commit -am 'message'`: 한번이라도 track된 파일만 add commit 동시 수행
+
+   - `git commit`: 아무 명령어를 안치면 txt 파일로 메세지를 남길수있음
+
+     - `git config --global core.editor "nano"`
+
+       파일을 편집할때 기본적으로 사용하는 편집기 설정
 
 6. 버전 삭제
 
+   - `git reset --hard <commit_id>`
+     - 해당 버전으로 리셋
+     - 해당 버전 이후의 커밋들은 사라짐
+     - 협업할때는 조심해서 사용할것
+
 7. 버전 되돌리기
 
-   - `git reset --hard`:이전 버전으로 돌아갈수있음
+   - `git revert --hard`:이전 버전으로 돌아갈수있음
+   - revert 시 기존의 커밋은 살려두고 이전 커밋으로 돌아갈수있음
+     - 이전 커밋을 기존 커밋 다음으로 가져옴.
+   - 여러 단계를 한번에 revert하면 충돌이 생길수있음
+     - 충돌(confict)을 배우지 않은 상태에서는 한 단계 씩만 돌아갈것
+
+8. 수업 끝 (다음 내용)
+
+   - diff tool
+   - .gitignore: 버전관리를 하고 싶지 않은 경우 해당 파일을 생성
+   - branch:
+   - tag: commit id는 외우기 어려우니 이름을 설정해서 돌아갈수있음
+   - backup
+
+## 3. Git - Branch & Confilct
+
+
+
+## 4. Git - Backup
 
 ---
 
@@ -185,3 +273,9 @@ $ git help tutorial
 > ```
 >
 > 
+
+---
+
+##### 참고한 블로그
+
+https://goddaehee.tistory.com/216
