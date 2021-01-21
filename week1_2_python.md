@@ -216,20 +216,24 @@ __Parameter(매개변수)__: 함수의 입력 변수 명. 함수 정의 시 사�
   - 파이썬에는 최대 재귀 깊이가 설정이 되어있음. (최대 1000번)
   - 반복문으로 대체 가능. 동적계획법
 
-## Error 에러, Exception 예외처리
+## Error 에러
 
-#### Error
+#### Syntax Error 문법 에러
 
-1. `SyntaxError`
-   - `^`(parser)가 문제가 발생한 위치를 알려주지만 완전한 것은 아님.
+- `^`(parser)가 문제가 발생한 위치를 알려주지만 완전한 것은 아님.
+- EOL: End of Line
+- EOF: End of File
 
-#### Excetption
+#### Excetption 예외
+
+- 문법적으로는 문제 없고 실행시 발생하는 에러
 
 - `ZeroDivisionError  `: 0으로 나눈 경우
 - `NameError`: 정의되지 않은 변수 호출
 - `TypeError`: 
   - 자료형에 대한 타입 자체가 잘못 되었을 경우
-  - 필수 argument 누락, argument 개수 초과
+  - 필수 argument 누락
+  - argument 개수 초과
 - `ValueError`
   - 자료형에 대한 타입은 올바르나 값이 적절하지 않는 경우
   - 존재하지 않는 값을 찾고자 할 경우
@@ -240,30 +244,37 @@ __Parameter(매개변수)__: 함수의 입력 변수 명. 함수 정의 시 사�
   - 존재하지 않는 클래스/함수 호출
 - `KeyboardInterrupt`: 터미널 상 'ctrl+c'를 통해 종료하였을 때 발생
 
----
+####  Exception Handling 예외 처리
 
-여기부터는 조금 더 보완할 것
-
-####  Exception Handling
+예외 처리를 하지 않으면 프로그램, 웹사이트, 서버 등이 정상적으로 동작하지 않음
 
 ``` python
 try:
-    pass
-except (Exception1) as err1:
-    pass
-except (Exception2) as err2:
-    pass
+    <code 1>
+except (Exception1, Exception2) as err1:
+    <code 2>
+    print(err1)
+except (Exception3)
+    <code 3>
+except:
+    <code 4>
 else:
-    pass
+    <code 5>
 finally:
-    pass
+    <code 6>
 ```
 
-- try: 
-- except:
-- as:
-- else:
-- finaly:
+- `try`:  Exception이 발생할수 있는 코드 작성. 
+- `except`
+  - `try`에서 exception이 발생하면 실행하고 발생하지 않으면 넘어감
+  - 각 exception 마다 지정하여 처리 가능. 
+  - Exception을 묶어서 처리 가능
+  - 지정하지 않은 모든 에러에 대해서 처리 가능
+- as: 에러 메세지의 내용까지 알고 싶을때 사용
+- else: Exception이 발생하지 않은 경우 실행
+- finaly
+  - 예외 발생과 상관 없이 항상 수행
+  - 보통 사용한 리소스를 close 할때 많이 사용. 
 
 
 
@@ -275,4 +286,9 @@ finally:
   raise <ErrorName>('message')
   ```
 
-- assert:
+  - 사용자가 직접 설정하게 에러만 발생시킴.
+
+- assert
+
+  - 상태를 검증하는데 사용. 디버깅용도.
+  - 무조건 AssertionError가 발생
