@@ -292,3 +292,14 @@ finally:
 
   - 상태를 검증하는데 사용. 디버깅용도.
   - 무조건 AssertionError가 발생
+
+---
+
+#### 그 외 
+
+`(2==True)`:False
+
+`(bool(2)== True)`: True
+
+
+
