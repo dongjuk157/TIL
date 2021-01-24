@@ -24,6 +24,8 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
            [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
            <command> [<args>]
 
+
+
 ## 1. Git
 
 ### Git의 목적
@@ -37,6 +39,8 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
    - Push: Local -> Remote; 내 파일을 원격 저장소에 밀어낸다. (저장한다.)
    - Pull: Local <- Remote; 원격 저장소의 파일을 내 폴더에 가져온다.(동기화 시킨다.)
 3. 협업
+
+
 
 ## 2. Git - 버전관리
 
@@ -148,13 +152,15 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
    - 여러 단계를 한번에 revert하면 충돌이 생길수있음
      - 충돌(confict)을 배우지 않은 상태에서는 한 단계 씩만 돌아갈것
 
-8. 수업 끝 (다음 내용)
+8. 다음 내용
 
    - diff tool
    - .gitignore: 버전관리를 하고 싶지 않은 경우 해당 파일을 생성
    - branch:
    - tag: commit id는 외우기 어려우니 이름을 설정해서 돌아갈수있음
    - backup
+
+
 
 ## 3. Git - Branch & Confilct
 
@@ -445,8 +451,6 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
       1. `git config --global merge.tool <program_name>`
       2. ex: `p4mergetool`:P4Merge. 설정은 프로그램 설명을 보면서 설정
 
-7. 수업 끝
-
 8. 부록 
 
    1. 아직 이해가 부족하다. 다음에 몇 번 더 듣자.
@@ -465,6 +469,45 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 
 ## 4. Git - Backup
+
+1. 수업소개
+
+   - 백업의 필요성
+   - git hosting: Github, Gitlab
+
+2. 수업의 목표와 용어정리
+
+   - Local Repository: 지역
+   - Remote Repository: 원격
+   - Push: local을 remote로 옮기는 작업(업로드, 백업)
+   - Pull: remote에서 local로 옮기는 작업(다운로드)
+
+3. 공부의 방향
+
+   - HTTP:
+   - SSH: 보안이 강력하지만 어려움
+
+4. 원격저장소와 연결
+
+   - HTTPS 주소를 복사
+   - `$ git remote add origin <remote_repo_address>`: 원격저장소 연결(주소 저장)
+   - `$ git remote -v`:원격저장소의 주소를 알수있음
+
+5. Push, Clone, Pull
+
+   - `git push --set-upstream origin master`
+     - 어떤 저장소가 기본인지 지정
+     - 이후엔 `git push`만 해도 올라감
+   - 처음 사용할땐 계정 연결 필수 
+
+   - `git clone <remote_repo_address>`: 명령을 진행한 폴더에 디렉토리 생성
+   - `git pull origin master`
+
+6. 다음 배울 내용
+
+   - 자동 인증(SSH)
+   - 이슈 트래커
+   - 협업 기능 -> 충돌관리
 
 
 

@@ -9,8 +9,9 @@
    - Baekjoon
 3. Web
    - Vue.js
-   - JavaScript
    - React
+   - JavaScript -> Node.js(Server)
+   - HTML, CSS
 4. Chat Bot
    - Telegram
    - Discord
@@ -19,8 +20,8 @@
    - 생활코딩 (git_shcd.md)
      - Git1
      - Git CLI - 버전관리 
-     - Git CLI - Branch & Conflict <- 여기까지 강의 완료
-     - Git CLI - Backup
+     - Git CLI - Branch & Conflict 
+     - Git CLI - Backup                                 <- 여기까지 강의 완료
      - Git CLI - 협업
      - Git CLI - Cherry-pick & rebase
      - Git CLI - github.com Pull request
