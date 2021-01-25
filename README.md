@@ -10,8 +10,9 @@
 3. Web
    - Vue.js
    - React
-   - JavaScript -> Node.js(Server)
+   - JavaScript -> TypeScript
    - HTML, CSS
+   - Node.js(Server)
 4. Chat Bot
    - Telegram
    - Discord
@@ -19,10 +20,10 @@
 5. Git
    - 생활코딩 (git_shcd.md)
      - Git1
-     - Git CLI - 버전관리 
-     - Git CLI - Branch & Conflict 
-     - Git CLI - Backup                                 <- 여기까지 강의 완료
-     - Git CLI - 협업
+     - Git CLI - 버전관리
+     - Git CLI - Branch & Conflict
+     - Git CLI - Backup
+     - Git CLI - 협업                                     <- 여기까지 강의 완료
      - Git CLI - Cherry-pick & rebase
      - Git CLI - github.com Pull request
      - 프로젝트 관리도구(Gitlab, github)

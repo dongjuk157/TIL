@@ -513,6 +513,33 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 ## 5. Git - 협업
 
+1. 같이 작업하기
+
+   1. Collaborator 추가
+
+2. Push & Pull
+
+   1. commit id가 다른상태에서 `git push` 를 하면 reject 발생
+   2. 이 상태에서 `git pull` 사용하면 conflict 발생. 
+   3. conflict 처리후 `git push` 가능
+
+3. 원격 브랜치와 fetch
+
+   1. remote branch: 오른쪽에 있는 것이 원격 브랜치
+
+      ``` shell
+      $ git log
+      <commit_id> (HEAD -> master, origin/master, origin/HEAD)
+      ```
+
+   2. FETCH
+
+      `git fetch`: 원격 브랜치를 최신 상태로 변화. 병합은 나중에 하고 싶은 경우 사용
+
+      `git merge`: 병합
+
+      `git pull`: `git fetch`+`git merge`
+
 
 
 ## 6. Git - Cherry-pick & rebase
