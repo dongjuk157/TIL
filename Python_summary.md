@@ -14,6 +14,8 @@
 
 [데이터 구조](#데이터-구조)
 
+[모듈, 패키지](#모듈,-패키지)
+
 ---
 
 환경: python 3.8 
@@ -1057,6 +1059,42 @@ temperatures = {'서울': 9, '대전': 12, '구미': 13, '광주': 13, }
 {key:value for key, value in temperatures.items() if value > 10}
 # => {'대전': 12, '구미': 13, '광주': 13}
 ```
+
+
+
+## 모듈, 패키지
+
+> 파일 단위의 코드 재사용
+
+- 모듈(Module):  특정 기능을 하는 코드를 담고 있는 파일(또는 스크립트)
+- 패키지(Package): 점(`.`)으로 구분된 모듈 이름(`package.module`) 을 써서 모듈을 구조화하는 방법
+
+| 용어                     | 정의                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| 모듈                     | 특정 기능을 `.py` **파일 단위**로 작성한 것.                 |
+| 패키지                   | 특정 기능과 관련된 여러 **모듈들의 집합**. 패키지 안에는 또다른 서브 패키지를 포함 할수도 있음. |
+| 파이썬 표준 라이브러리   | 파이썬에 **기본적으로 설치된 모듈과 내장 함수**를 묶어서 파이썬 표준 라이브러리 (Python Standard Library, PSL) 라 불림. |
+| 패키지 관리자(**`pip`**) | `PyPI` 에 저장된 외부 패키지들을 설치하도록 도와주는 패키지. |
+
+#### 모듈(Module)
+
+```python
+import module
+from module import var, function, Class
+from module import * # 웬만하면 사용하지 말것
+```
+
+#### 패키지(Package)
+
+```python
+from package import module
+from package.module import var, function, Class
+from package.module import var as v # v로 사용할수 있음
+```
+
+- 패키지 생성하는 방법은 필요시 찾아볼 것
+
+
 
 ---
 
