@@ -1,16 +1,18 @@
 # Python
 
-[데이터](## 데이터)
+목차
 
-[제어문](## 제어문(Control Flow))
+[데이터](#데이터)
 
-[Function(함수)](## Function(함수))
+[제어문](#제어문(Control-Flow))
 
-[Recursive Function 재귀 함수 ](## Recursive Function 재귀 함수 )
+[Function 함수](#Function-함수)
+
+[Recursive Function 재귀 함수](#Recursive-Function-재귀-함수 )
 
 [Error 에러](## Error 에러)
 
-[데이터 구조](## 데이터 구조)
+[데이터 구조](#데이터-구조)
 
 
 
@@ -517,7 +519,7 @@ else:
 
 
 
-## Function(함수)
+## Function 함수
 
 #### 사용 이유
 
