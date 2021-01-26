@@ -1,20 +1,18 @@
 # Python
 
-목차
+### 목차
 
 [데이터](#데이터)
 
-[제어문](#제어문(Control-Flow))
+[Control Flow 제어문](#Control-Flow-제어문 )
 
 [Function 함수](#Function-함수)
 
 [Recursive Function 재귀 함수](#Recursive-Function-재귀-함수 )
 
-[Error 에러](## Error 에러)
+[Error 에러](#Error-에러)
 
 [데이터 구조](#데이터-구조)
-
-
 
 ---
 
@@ -50,7 +48,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
 ## 데이터
 
-### 1. 기초문법
+### 기초문법
 
 1. 주석
 
@@ -90,7 +88,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
 
 
-### 2. 변수
+### 변수
 
 - 계산 결과를 상자에 넣어두고, 상자에 이름을 붙이는 느낌
 
@@ -114,7 +112,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
 
 
-### 3. 데이터 타입
+### 데이터 타입
 
 1. 숫자(int, float, complex)
 
@@ -186,7 +184,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
    
 
-### 4. 연산자
+### 연산자
 
 1. 산술
 
@@ -276,7 +274,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
 
 
-### 5. Container
+### Container
 
 #### 시퀀스형 컨테이너
 
@@ -370,7 +368,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
 
 
-## 제어문(Control Flow)
+## Control Flow 제어문
 
 Flow Chart 중요
 
@@ -526,6 +524,8 @@ else:
 - 코드의 재사용
 - 가독성이 높음
 - 유지보수: 기능별 분화
+
+
 
 #### 함수 선언 및 호출
 
@@ -840,6 +840,8 @@ finally:
 
 - 데이터 구조에 적용 가능한 Built-in Function
 
+
+
 ### 문자열(String)
 
 변경불가능(**immutable**), 순서있음(ordered), 순회가능(iterable)
@@ -874,6 +876,8 @@ finally:
 - 기타 문자열 관련 검증 메소드 : 참/거짓 반환
 
   .isalpha(), .isdecimal(), .isdigit(), .isnumeric(), .isspace(), .isupper(), .istitle(), .islower()
+
+
 
 ### 리스트(List)
 
@@ -913,6 +917,8 @@ finally:
 
 - `[expression for 변수 in iterable if 조건식]`
 - 조건식이 참인 경우만 리스트의 요소로 들어감
+
+
 
 ### 데이터 구조에 적용가능한 Built-in Function
 
@@ -980,6 +986,8 @@ reduce(lambda x, y: y + x, 'abcde')
 #'edcba'
 ```
 
+
+
 ### 세트 (set)
 
 변경 가능(__mutable__), 순서 없음(__unordered__), 순회 가능(iterable)
@@ -991,6 +999,8 @@ reduce(lambda x, y: y + x, 'abcde')
 - .remove(elem): elem을 세트에서 삭제, 없으면 KeyError 발생
 - .discard(elem): elem을 세트에서 삭제, 없어도 에러가 발생안함
 - .pop(): (순서가 없어서) 임의의 원소를 제거해 반환.
+
+
 
 ### 딕셔너리(Dictionary)
 
