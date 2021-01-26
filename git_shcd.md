@@ -544,11 +544,49 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 ## 6. Git - Cherry-pick & rebase
 
+어렵다어려워... 지금은 넘어가고 나중에 (필요할 때) 다시 보자
+
+1. cherry-pick
+
+   특정한 커밋을 하나 따와서 다른 커밋 뒤에 붙이는 것
+
+   ![image-20210126154352199](git_shcd.assets/image-20210126154352199.png)
+
+   
+
+   ```shell
+   $ git checkout master
+   $ git cherry-pick <commit-id>
+   ```
+
+2. rebase
+
+   작업이 끝난후에 마스터 작업이 이루어진 것처럼 만드는 것
+
+   ![image-20210126154437877](git_shcd.assets/image-20210126154437877.png)
+
+   - base: master와 topic이 갈라진 지점.
+
+   - rebase: master가 갈라진 지점을 topic의 뒤로 옮긴다
+
+   ```shell
+   $ git checkout master
+   $ git rebase <commit-id>
+   ```
+
+   - 로컬에 있는 동안에만 수행할것. 원격에 올라가면 꼬일 가능성이 높음
+
+3. 협업에서 rebase를 이용해 로그 정리하기
+
+   - `git fetch`를 통해서 `branch`는 받아오면 `merge`까지는 하지않음
+   - 확인하면서 병합하다보면 로그가 많아질수있음(더러워질수있음).
+   - `git rebase`를 통해 일자로 만들수있음
 
 
-## 7. Git - github.com Pull request
 
+## 7. Git - github.com Pull request 
 
+gitlab.com: merge request
 
 
 
