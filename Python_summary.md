@@ -1,5 +1,21 @@
 # Python
 
+[데이터](## 데이터)
+
+[제어문](## 제어문(Control Flow))
+
+[Function(함수)](## Function(함수))
+
+[Recursive Function 재귀 함수 ](## Recursive Function 재귀 함수 )
+
+[Error 에러](## Error 에러)
+
+[데이터 구조](## 데이터 구조)
+
+
+
+---
+
 환경: python 3.8 
 
 - Python 공식 Tutorial https://docs.python.org/3.8/tutorial/index.html
@@ -806,6 +822,229 @@ finally:
 
   - 상태를 검증하는데 사용. 디버깅용도.
   - 무조건 AssertionError가 발생
+
+
+
+## 데이터 구조
+
+데이터에 편리하게 접근하고, 변경하기 위해서 데이터를 저장하거나 조작하는 방법
+
+- 알고리즘에 빈번히 활용되는 순서가 있는(ordered) 데이터 구조
+  - 문자열(String)
+  - 리스트(List)
+- 알고리즘에 빈번히 활용되는 순서가 없는(unordered) 데이터 구조
+  - 세트(Set)
+  - 딕셔너리(Dictionary)
+
+- 데이터 구조에 적용 가능한 Built-in Function
+
+### 문자열(String)
+
+변경불가능(**immutable**), 순서있음(ordered), 순회가능(iterable)
+
+- .find(x): x의 첫 번째 위치를 반환합니다. 없으면, -1을 반환
+
+- .index(x): x의 첫번째 위치를 반환합니다. 없으면, 오류가 발생.
+
+- .replace(old, new[, count]):
+
+  바꿀 대상 글자를 새로운 글자로 바꿔서 반환. count를 지정하면 해당 갯수만큼만 시행
+
+- .strip([chars]) .lstrip([chars]), .rstrip([chars])
+  특정한 문자들을 지정하면, 양쪽을 제거하거나 왼쪽을 제거하거나(lstrip), 오른쪽을 제거합니다(rstrip). 지정하지 않으면 공백을 제거.
+
+- .split() :문자열을 특정한 단위로 나누어 리스트로 반환
+
+- 'separator'.join(iterable):
+
+  반복가능한 컨테이너의 요소들을 구분자(separator)로 합쳐 문자열로 반환.
+
+- .capitalize() : 앞글자를 대문자로 만들어 반환
+
+- .title() : 특정 위치만 대문자로 만들어 반환
+
+- .upper() : 모두 대문자로 만들어 반환
+
+- lower() : 모두 소문자로 만들어 반환
+
+- swapcase() : 대 <-> 소문자로 변경하여 반환
+
+- 기타 문자열 관련 검증 메소드 : 참/거짓 반환
+
+  .isalpha(), .isdecimal(), .isdigit(), .isnumeric(), .isspace(), .isupper(), .istitle(), .islower()
+
+### 리스트(List)
+
+변경가능(**mutable**), 순서있음(ordered), 순회가능(iterable)
+
+- .append(x): 값을 추가
+
+- .extend(iterable): iterable(list, range, tuple, string) 값
+
+  - iterable의 요소가 더해지므로 string의 경우 나뉘어서 더해짐.
+
+- .insert(i, x): 정해진 위치 i에 값을 추가
+
+- .remove(x): 값이 x인 것을 삭제
+
+- .pop(i): -> set, dictionary
+
+  정해진 위치 i에 있는 값을 삭제하며, 그 항목을 반환. i가 지정되지 않으면 마지막 값
+
+- .clear(): 모든 항목을 삭제
+
+- .index(x): x 값을 찾아 해당 index 값을 반환. index 없는 경우 에러 발생
+
+- .count(x): 원하는 값의 개수를 확인
+
+- .sort(): 정렬. 내장함수 sorted() 와는 다르게 원본 list를 변형시키고, None을 리턴.
+
+- .reverse():   반대로 뒤집음.
+
+**리스트 복사**
+
+- Shallow copy: Slicing, list()
+- Deep copy: 
+  - `import copy` `copy.deepcopy(list)`
+
+**리스트 comprehension**
+
+- `[expression for 변수 in iterable if 조건식]`
+- 조건식이 참인 경우만 리스트의 요소로 들어감
+
+### 데이터 구조에 적용가능한 Built-in Function
+
+순회 가능한(iterable) 데이터 구조에 적용가능한 Built-in Function
+
+#### 람다(lambda)
+
+`lambda <parameter> : <expression>`
+
+한 줄 함수
+
+ex)
+
+```python
+def hap(x, y):
+	return x + y
+hap(10, 20) # =>30
+
+(lambda x,y: x + y)(10, 20) # => 30 같은식
+```
+
+#### map(function, iterable)
+
+원소를 하나씩 꺼내서 함수를 적용시킨 후으로 `map_object`를 반환. 
+
+- 주의. function은 이름만 작성
+
+ex)
+
+```python
+list(map(lambda x: x ** 2, range(5)))    
+# [0, 1, 4, 9, 16]
+list(map(int,input().split())) # => 알고리즘에 자주쓰임
+```
+
+#### filter(function,iterable)
+
+원소들을 함수에 적용시켜 결과가 참인 값들로 `filter object`를 반환
+
+-  `False`로 형변환이 되지 않는 모든 것들은 `True`로 동작
+
+```python
+list(filter(lambda x: x % 2, range(10))) 
+#[1, 3, 5, 7, 9]
+```
+
+#### zip(*iterables)
+
+iterable 객체를 모아 튜플의 모음으로 구성된 `zip object` 를 반환
+
+- 튜플의 길이는 가장 짧은 iterable 객체의 길이
+- 두개를 사용하면 dictionary 만들기 좋음
+
+#### reduce(function,iterable)
+
+순서형 자료(문자열, 리스트, 튜플)의 원소들을 누적하면서 함수에 적용
+
+ex)
+
+```python
+from functools import reduce # import 필요
+reduce(lambda x, y: x + y, [0, 1, 2, 3, 4])
+#10
+reduce(lambda x, y: y + x, 'abcde')
+#'edcba'
+```
+
+### 세트 (set)
+
+변경 가능(__mutable__), 순서 없음(__unordered__), 순회 가능(iterable)
+
+- .add(elem): elem을 세트에 추가
+- .update(*others):
+  -  여러가지의 값을 추가합니다.
+  -  인자로는 반드시 iterable 데이터 구조 전달
+- .remove(elem): elem을 세트에서 삭제, 없으면 KeyError 발생
+- .discard(elem): elem을 세트에서 삭제, 없어도 에러가 발생안함
+- .pop(): (순서가 없어서) 임의의 원소를 제거해 반환.
+
+### 딕셔너리(Dictionary)
+
+변경 가능(__mutable__), 순서없음(__unordered__), 순회 가능(iterable)
+
+- .get(key[, default]): 
+
+  - key를 통해 value에 접근
+  - 절대로 KeyError가 발생하지 않고 default는 None
+
+- .pop(key[, default])
+
+  - 딕셔너리에 있으면 key를 제거하고 value 반환. key 없으면 default를 반환
+
+  - default가 없는 상태에서 딕셔너리에 없으면 KeyError 발생
+
+- .update(): 값을 제공하는 key, value로 덮어씀
+
+#### 딕셔너리 순회(반복문 활용)
+
+```python
+# key 활용
+for key in dict:
+    print(key)
+    print(dict[key])
+
+#keys() 활용
+for key in dict.keys():
+    print(key)
+    print(dict[key])
+
+#values() 활용    
+for val in dict.values():
+    print(val)
+
+#items() 활용
+for key, val in dict.items():
+    print(key, val)
+```
+
+#### Dictionary comprehension
+
+```python
+{key: value for 변수 in iterable if 조건식}
+```
+
+List comprehension과 유사하게, 조건문에 참인 식으로 딕셔너리를 생성
+
+ex)
+
+```python
+temperatures = {'서울': 9, '대전': 12, '구미': 13, '광주': 13, }
+# 온도가 10도를 초과하는 지역만 뽑아주세요.
+{key:value for key, value in temperatures.items() if value > 10}
+# => {'대전': 12, '구미': 13, '광주': 13}
+```
 
 ---
 
