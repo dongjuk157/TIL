@@ -142,7 +142,7 @@ class ChildClass(ParentClass):
   ```python
   class ChildClass(ParentClass):
   	def __init__(self, parent_common_value, child_only_value):# 메소드 오버라이딩 발생
-          super().__init__(self,parent_common_value) 	# 상속받은 값을 사용함
+          super().__init__(parent_common_value) 		# 상속받은 값을 사용함
           self.child_only_value = child_only_value	# 추가 작업
   ```
   
