@@ -39,7 +39,7 @@ warning이라 그냥 무시하고 사용해도 상관없다
 
 ##### 1. 로컬 디렉토리와 git에서 모두 삭제하는 방법
 
-`git rm <file_name or folder_name>` 
+`git rm -rf <file_name or folder_name>`
 
 ##### 2. git 에서만 삭제하는 방법
 

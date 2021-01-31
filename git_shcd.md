@@ -143,10 +143,11 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
      - 해당 버전으로 리셋
      - 해당 버전 이후의 커밋들은 사라짐
      - 협업할때는 조심해서 사용할것
+     - 원격 저장소에 올린상태에서 `git reset`을 진행하면 push 할 수 없음.(강제로는 가능하지만 추천하지 않음)
 
 7. 버전 되돌리기
 
-   - `git revert --hard`:이전 버전으로 돌아갈수있음
+   - `git revert `:이전 버전으로 돌아갈수있음
    - revert 시 기존의 커밋은 살려두고 이전 커밋으로 돌아갈수있음
      - 이전 커밋을 기존 커밋 다음으로 가져옴.
    - 여러 단계를 한번에 revert하면 충돌이 생길수있음
@@ -466,7 +467,9 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
       1. 현재 branch의 버전을 master가 가리키고 있는 버전을 가리킴
       2. 이후의 커밋들은 추적 불가능(delete 느낌)
 
-
+8. Branch 삭제
+   1. `git branch -d <branch_name>`: 브랜치에서 병합이 된 경우에 사용
+   2. `git branch -D <branch_name>`: 병합이 되지않았지만 삭제할 때 사용(강제)
 
 ## 4. Git - Backup
 

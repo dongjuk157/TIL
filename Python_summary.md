@@ -73,7 +73,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
    - 한 줄에 한 문장
    - `;` 은 잘 쓰이진 않으나 한 줄 코드에서 문장 구분용도로 사용.
-   - print 함수에서 여러줄을 작성하려면 `\`역슬래시도 가능하나 다음을 사용하는 것을 추천.
+   - print 함수에서 여러줄을 작성하려면 `\`역슬래시도 가능함. (PEP-8에는 ''' 권장)
 
    ``` python
    print(''' hello,
@@ -104,7 +104,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
   - 알파벳, _(underbar), 숫자를 사용할 수 있지만, 첫 글자에 숫자는 불가능
   - 대소문자 구분
-  - 키워드는 사용할 수 없음.
+  - 키워드는 사용할 수 없음.`import keyword; print(keyword.kwlist)`로 확인 가능
   - 일반적으로 사용되는 함수의 이름도 사용하지 않는 것이 좋음. 같은 이름의 함수는 기능을 수행하지 못함
 
   ```python
@@ -118,7 +118,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
 1. 숫자(int, float, complex)
 
-   Integer  `int`
+   **Integer**  `int`
 
    - 정수의 범위가 한정되지 않음. Overflow 없음.
 
@@ -128,7 +128,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
    - 숫자 앞에 적어서 다음을 표현할수 있음. 2진수 `0b`, 8진수 `0o`, 16진수 `0x` 
 
-   Floating point number  `float`
+   **Floating point number**  `float`
 
    - `pi=314e-2` 와 같은 표현 가능
    - 실수 연산시 오류가 발생할수 있음(floating point rounding error)
@@ -141,14 +141,16 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
 
    - `round()`, `math.isclose(a,b)`, `sys.float_info.epsilon` 등을 사용해서 처리
 
-   Complex number
+   **Complex number**
 
    - `a=3-4j`
+   - `.imag`, `.real` 을 사용하여 각각 접근할 수 있음
+   - 문자열에서 복소수로 변환할 때 중앙의 + 또는 - 연산자 주위에 공백을 포함해서는 안 됨
 
 2. 문자
 
-   - 똑같이 보이는 것도 타입이 다를수있음. type으로 형 확인 필수
-   - Input()으로 받으면 무조건 ‘str’ 타입으로 받음
+   - 똑같이 보이는 것도 타입이 다를수있음. `type()`으로 형 확인 필수
+   - `input()`으로 받으면 무조건 ‘str’ 타입으로 받음
    - String interpolation: 문자열안에 변수를 넣는 방법. 세가지 방법 다 알아야됨
 
    ```python
@@ -366,7 +368,7 @@ PEP-8 https://www.python.org/dev/peps/pep-0008/
   >> num1 =[100,2,3,4], num2 =[100,2,3,4]
   ```
 
-  - 해결방법: 새로 선언해서 해결. `b=list(a)`,`b=a[:]`
+  - 해결방법: 새로 선언해서 해결. `b=list(a)`,`b=a[:]`,`deepcopy`
 
 
 
@@ -804,9 +806,9 @@ finally:
   - 각 exception 마다 지정하여 처리 가능. 
   - Exception을 묶어서 처리 가능
   - 지정하지 않은 모든 에러에 대해서 처리 가능
-- as: 에러 메세지의 내용까지 알고 싶을때 사용
-- else: Exception이 발생하지 않은 경우 실행
-- finaly
+- `as`: 에러 메세지의 내용까지 알고 싶을때 사용
+- `else`: Exception이 발생하지 않은 경우 실행
+- `finaly`
   - 예외 발생과 상관 없이 항상 수행
   - 보통 사용한 리소스를 close 할때 많이 사용. 
 
@@ -848,36 +850,36 @@ finally:
 
 변경불가능(**immutable**), 순서있음(ordered), 순회가능(iterable)
 
-- .find(x): x의 첫 번째 위치를 반환합니다. 없으면, -1을 반환
+- `.find(x)`: x의 첫 번째 위치를 반환합니다. 없으면, -1을 반환
 
-- .index(x): x의 첫번째 위치를 반환합니다. 없으면, 오류가 발생.
+- .`index(x)`: x의 첫번째 위치를 반환합니다. 없으면, 오류가 발생.
 
-- .replace(old, new[, count]):
+- `.replace(old, new[, count])`:
 
   바꿀 대상 글자를 새로운 글자로 바꿔서 반환. count를 지정하면 해당 갯수만큼만 시행
 
-- .strip([chars]) .lstrip([chars]), .rstrip([chars])
+- `.strip([chars]) .lstrip([chars]), .rstrip([chars])`
   특정한 문자들을 지정하면, 양쪽을 제거하거나 왼쪽을 제거하거나(lstrip), 오른쪽을 제거합니다(rstrip). 지정하지 않으면 공백을 제거.
 
-- .split() :문자열을 특정한 단위로 나누어 리스트로 반환
+- `.split()` :문자열을 특정한 단위로 나누어 리스트로 반환
 
-- 'separator'.join(iterable):
+- `'separator'.join(iterable):`
 
   반복가능한 컨테이너의 요소들을 구분자(separator)로 합쳐 문자열로 반환.
 
-- .capitalize() : 앞글자를 대문자로 만들어 반환
+- `.capitalize()` : 앞글자를 대문자로 만들어 반환
 
-- .title() : 특정 위치만 대문자로 만들어 반환
+- `.title()` : 특정 위치만 대문자로 만들어 반환
 
-- .upper() : 모두 대문자로 만들어 반환
+- `.upper()` : 모두 대문자로 만들어 반환
 
-- lower() : 모두 소문자로 만들어 반환
+- `lower()` : 모두 소문자로 만들어 반환
 
-- swapcase() : 대 <-> 소문자로 변경하여 반환
+- `swapcase()` : 대 <-> 소문자로 변경하여 반환
 
 - 기타 문자열 관련 검증 메소드 : 참/거짓 반환
 
-  .isalpha(), .isdecimal(), .isdigit(), .isnumeric(), .isspace(), .isupper(), .istitle(), .islower()
+  `.isalpha()`, `.isdecimal()`, `.isdigit()`, `.isnumeric()`, `.isspace()`, `.isupper()`, `.istitle()`, `.islower()`
 
 
 
@@ -885,29 +887,29 @@ finally:
 
 변경가능(**mutable**), 순서있음(ordered), 순회가능(iterable)
 
-- .append(x): 값을 추가
+- `.append(x)`: 값을 추가
 
-- .extend(iterable): iterable(list, range, tuple, string) 값
+- `.extend(iterable)`: iterable(list, range, tuple, string) 값
 
   - iterable의 요소가 더해지므로 string의 경우 나뉘어서 더해짐.
 
-- .insert(i, x): 정해진 위치 i에 값을 추가
+- `.insert(i, x)`: 정해진 위치 i에 값을 추가
 
-- .remove(x): 값이 x인 것을 삭제
+- `.remove(x)`: 값이 x인 것을 삭제
 
-- .pop(i): -> set, dictionary
+- `.pop(i)`: -> set, dictionary
 
   정해진 위치 i에 있는 값을 삭제하며, 그 항목을 반환. i가 지정되지 않으면 마지막 값
 
-- .clear(): 모든 항목을 삭제
+- `.clear()`: 모든 항목을 삭제
 
-- .index(x): x 값을 찾아 해당 index 값을 반환. index 없는 경우 에러 발생
+- `.index(x)`: x 값을 찾아 해당 index 값을 반환. index 없는 경우 에러 발생
 
-- .count(x): 원하는 값의 개수를 확인
+- `.count(x)`: 원하는 값의 개수를 확인
 
-- .sort(): 정렬. 내장함수 sorted() 와는 다르게 원본 list를 변형시키고, None을 리턴.
+- `.sort()`: 정렬. 내장함수 sorted() 와는 다르게 원본 list를 변형시키고, None을 리턴.
 
-- .reverse():   반대로 뒤집음.
+- `.reverse()`:   반대로 뒤집음.
 
 **리스트 복사**
 
