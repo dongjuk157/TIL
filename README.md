@@ -1,17 +1,19 @@
 # Today I Learned 
 
-1. Python
-   - python 3.8.7
-   - Summary
-2. Algorithm
+1. Language
+   - Python(3.8.7): 얼추?
+   - C/C++: 사용한지 오래되어서 까먹음
+   - Java: 책은 있는데 ㅋ
+2. Algorithm [링크](https://github.com/dongjuk157/Coding_test)
    - swea
    - programmers
    - Baekjoon
 3. Web
+   - HTML, CSS
+   - JavaScript -> TypeScript
+   - Django
    - Vue.js
    - React
-   - JavaScript -> TypeScript
-   - HTML, CSS
    - Node.js(Server)
 4. Chat Bot
    - Telegram
@@ -28,3 +30,4 @@
      - Git CLI - github.com Pull request
      - 프로젝트 관리도구(Gitlab, github)
 6. Any other things...
+

@@ -1,3 +1,7 @@
+![GitHub - qw3rtman/git-fire: Save Your Code in an Emergency](git_shcd.assets/e3756280-e50c-11e9-877f-24272543fd9c-1613137171537)
+
+
+
 # Git 생활코딩
 
 ## 0. Git 설치
