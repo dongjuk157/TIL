@@ -11,7 +11,7 @@
 3. Web
    - HTML, CSS
    - JavaScript -> TypeScript
-   - Django
+   - Django -> 복습겸 만들어봄 crud
    - Vue.js
    - React
    - Node.js(Server)
@@ -30,4 +30,6 @@
      - Git CLI - github.com Pull request
      - 프로젝트 관리도구(Gitlab, github)
 6. Any other things...
+   - 리액트 네이티브: 책을 받아서 해야할거같은데,,,
+   - 
 
