@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Account INDEX</h1>
+  <h2>Hello, {{ request.user }}</h2>
+  <hr>
+  {% for user in users %}
+    <li>
+    {{ user.pk }}: {{ user }}
+    </li>
+  {% endfor %}
+{% endblock content %}

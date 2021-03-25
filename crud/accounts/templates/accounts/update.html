@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Profile</h1>
+  <hr>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Edit</button>
+  </form>
+  <form action="{% url 'accounts:delete' %}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-danger">탈퇴</button>
+  </form>
+{% endblock content %}

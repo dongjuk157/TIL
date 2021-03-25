@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Detail</h1>
+<hr>
+<div>
+  <h3>제목: {{ article.title }}</h3>
+  <p>작성자: {{ article.user }}</p>
+  <p>내용</p>
+  <p>{{ article.content }}</p>
+  <p>작성시간: {{ article.created_at }}</p>
+  <p>수정시간: {{ article.updated_at }}</p>
+</div>
+{% if request.user == article.user %}
+<div>
+  <form action="{% url 'articles:update' article.pk %}" class="d-inline">
+    <button class="btn btn-success">Edit</button>
+  </form>
+  <form action="{% url 'articles:delete' article.pk %}" method="POST" class="d-inline">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+  </form>
+</div>
+{% endif %}
+<div>
+  <div>
+    <h5>Comments</h5>
+    <div>
+      {% for comment in comments %}
+        <p>{{ comment.content }}</p>
+        <div class="d-inline">
+          <form action="" class="d-inline">
+            <button class="btn btn-success">Edit</button>
+          </form>
+          <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+
+      {% empty %}
+      <p>No Comments!!</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <form action="{% url 'articles:comment' article.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form.content }}
+      <button class="btn btn-primary" class='d-inline'>Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock content %}
