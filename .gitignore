@@ -4,6 +4,8 @@
 
 ### others ###
 trash
+crud/crud/settings.py
+
 
 ### Django ###
 *.log

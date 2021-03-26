@@ -1,3 +1,7 @@
+[toc]
+
+---
+
 ![GitHub - qw3rtman/git-fire: Save Your Code in an Emergency](git_shcd.assets/e3756280-e50c-11e9-877f-24272543fd9c-1613137171537)
 
 
@@ -191,7 +195,7 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
       `--graph`: 시각적으로 표현
 
-      ``--oneline`: 한 줄로 출력
+      `--oneline`: 한 줄로 출력
 
       ``` shell
       https://github.com/dongjuk157/web1
