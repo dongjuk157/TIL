@@ -599,6 +599,19 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 gitlab.com: merge request
 
+병합하는 것을 요청하는 기능
+
+- master 브랜치에는 안정적인 기능만 넣는다고 하자.
+
+- 내가 만든 기능을 master에 넣고 싶을때 Pull request 사용.
+- 다른 사람의 조언을 받고, master에 merge해서 새로운 버전 배포
+
+Create Pull request/ Create Draft request
+
+- Draft는 아직 다 만들지 않았을때 사용
+
+
+
 
 
 ---
