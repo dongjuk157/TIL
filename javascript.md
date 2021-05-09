@@ -182,15 +182,9 @@ Object(객체) 타입의 자료형
 
 #### Functions 함수
 
-[함수](##Functions-함수)
-
 #### Arrays 배열
 
-[배열](##Arrays-배열)
-
 #### Objects 객체
-
-[객체](##Objects-객체)
 
 
 

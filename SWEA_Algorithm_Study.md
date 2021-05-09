@@ -117,7 +117,7 @@ def countingSort(arr, n, k):
     count = [0] * (k + 1) 
     for i in range(len(a)):
         count[a[i]] += 1
-    # 2 카운팅 누적 합
+    # 2 카운팅 누적 합 
     for i in range(1, len(count)):
         count[i] += count[i - 1]
     # 3 정렬
@@ -249,8 +249,6 @@ def binarySearch(a, s, e, key):
             return binary(a, m+1, e, key)
 ```
 
-
-
 ```C
 int binarySearch(int a*, int n, int key){
     int s, e, m;
@@ -310,7 +308,7 @@ void SelectionSort(int *a, int size){
 
 ## String 문자열
 
-ASCII Code
+ASCII Code 
 
 ```python
 # python
@@ -472,7 +470,7 @@ int pop(){
 
 시스템 stack을 사용하는 방법
 
-
+top-down 
 
 ### 03 DP, Memoization
 
@@ -498,15 +496,21 @@ bottom up 방식
 
 괄호확인, 전위표기, 중위표기, 후위표기
 
+
+
 ### 02 백트래킹
 
 DFS 와다른점? 모든 노드를 순회하는 것이 아니고 유망한지 확인하면서 가지치기 사용
+
+
 
 ### 03 분할정복
 
 작은 문제로 나누어서 해결하는 방법
 
 Top down방식
+
+
 
 ### 04 퀵정렬
 
@@ -569,9 +573,11 @@ FIFO
 
 선형구조: 자료간의 관계가 1:1의 관계 
 
-### 01 선형 큐, 원형 큐, 연결큐
+### 01 선형 큐, 원형 큐, 연결 큐
 
 차이?
+
+
 
 ### 02 우선순위 큐
 
@@ -582,6 +588,8 @@ FIFO
 연결리스트 : 삭제는 O(1), 삽입은 O(n)
 
 힙: 삭제는 O(logn), 삽입은 O(logn)
+
+
 
 ### 03 BFS
 
@@ -597,6 +605,8 @@ FIFO
 - 연결리스트: 구조체로 만들어놓고 data와 주소를 받아서 연결시킴
   - 삽입 삭제시에도 이전 노드의 주소만 바꿔주면 됨
   - 단일 연결: 뒤 노드의 주소 기억, 이중 연결: 앞뒤 노드 주소 기억
+
+
 
 ### 02 삽입정렬
 
@@ -653,7 +663,7 @@ typedef struct stack{
     char data; //들어갈 데이터, int나 long이나 상관 없음
     struct stack* link; // 다음 노드의 주소값을 저장할 포인터 변수
 } stack;
-stack* top; // 맨위 노드 주소를 저장
+stack* top; // 맨위 노드 주소를 저장 
 
 // isfull 은 필요없음
 int isEmpty() {
